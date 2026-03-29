@@ -76,26 +76,43 @@ section{
 }
 
 /* PROYECTOS */
-.proyectos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
+<section id="proyectos" class="hidden">
+    <h2>Proyectos</h2>
 
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    width:260px;
-    border-radius:15px;
-    transition:0.4s;
-}
+    <div class="proyectos">
 
-.card:hover{
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 0 25px #38bdf8;
-}
+        <!-- PROYECTO 1 -->
+        <div class="card">
+            <h3>Carta de Bienvenida</h3>
+            <p>Proyecto utilizando JSON, XML y Azure Static Web Apps</p>
+
+            <a href="https://calm-rock-08688791e.4.azurestaticapps.net" target="_blank">
+                Ver proyecto
+            </a>
+        </div>
+
+        <!-- PROYECTO 2 -->
+        <div class="card">
+            <h3>Portafolio Web</h3>
+            <p>Diseño de página personal con HTML, CSS y animaciones</p>
+
+            <a href="https://github.com/" target="_blank">
+                Ver código
+            </a>
+        </div>
+
+        <!-- PROYECTO 3 -->
+        <div class="card">
+            <h3>Proyecto en desarrollo</h3>
+            <p>Aplicación web en proceso</p>
+
+            <a href="#">
+                Próximamente
+            </a>
+        </div>
+
+    </div>
+</section>
 
 /* HABILIDADES */
 .skills{
