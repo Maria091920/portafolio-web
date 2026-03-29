@@ -10,7 +10,17 @@
 
 <style>
 
-/* ===== GENERAL ===== */
+/* FONDO ANIMADO */
+#particles-js{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* GENERAL */
 body{
     margin:0;
     font-family:'Poppins', sans-serif;
@@ -19,7 +29,7 @@ body{
     scroll-behavior:smooth;
 }
 
-/* ===== MENÚ ===== */
+/* MENÚ */
 nav{
     position:fixed;
     width:100%;
@@ -43,17 +53,13 @@ nav a:hover{
     color:#38bdf8;
 }
 
-/* ===== SECCIONES ===== */
+/* SECCIONES */
 section{
     padding:100px 20px;
     text-align:center;
 }
 
-/* ===== INICIO ===== */
-#inicio h1{
-    font-size:3rem;
-}
-
+/* PERFIL */
 .perfil{
     width:160px;
     height:160px;
@@ -69,14 +75,7 @@ section{
     box-shadow:0 0 25px #38bdf8;
 }
 
-/* ===== SOBRE MI ===== */
-#sobre p{
-    max-width:800px;
-    margin:auto;
-    line-height:1.7;
-}
-
-/* ===== PROYECTOS ===== */
+/* PROYECTOS */
 .proyectos{
     display:flex;
     flex-wrap:wrap;
@@ -91,7 +90,6 @@ section{
     width:260px;
     border-radius:15px;
     transition:0.4s;
-    box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
@@ -99,14 +97,7 @@ section{
     box-shadow:0 0 25px #38bdf8;
 }
 
-.card a{
-    display:inline-block;
-    margin-top:10px;
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-/* ===== HABILIDADES ===== */
+/* HABILIDADES */
 .skills{
     display:flex;
     justify-content:center;
@@ -122,14 +113,14 @@ section{
     font-weight:bold;
 }
 
-/* ===== VIDEO ===== */
+/* VIDEO */
 video{
     width:70%;
     border-radius:15px;
     box-shadow:0 0 30px rgba(0,0,0,0.7);
 }
 
-/* ===== ANIMACIÓN SCROLL ===== */
+/* ANIMACIÓN SCROLL */
 .hidden{
     opacity:0;
     transform:translateY(50px);
@@ -141,24 +132,15 @@ video{
     transform:translateY(0);
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-    .proyectos{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    video{
-        width:90%;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== MENÚ ===== -->
+<!-- FONDO -->
+<div id="particles-js"></div>
+
+<!-- MENÚ -->
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#sobre">Sobre mí</a>
@@ -167,7 +149,7 @@ video{
     <a href="#video">Video</a>
 </nav>
 
-<!-- ===== INICIO ===== -->
+<!-- INICIO -->
 <section id="inicio" class="hidden">
     <h1>ING. SISTEMAS COMPUTACIONALES</h1>
     <h2>María de Jesús Martínez García</h2>
@@ -175,7 +157,7 @@ video{
     <img src="tu-imagen.jpg" class="perfil">
 </section>
 
-<!-- ===== SOBRE MI ===== -->
+<!-- SOBRE MI -->
 <section id="sobre" class="hidden">
     <h2>Sobre mí</h2>
 
@@ -194,7 +176,7 @@ Estoy en constante aprendizaje, buscando siempre mejorar y adaptarme a las nueva
     </p>
 </section>
 
-<!-- ===== PROYECTOS ===== -->
+<!-- PROYECTOS -->
 <section id="proyectos" class="hidden">
     <h2>Proyectos</h2>
 
@@ -219,7 +201,7 @@ Estoy en constante aprendizaje, buscando siempre mejorar y adaptarme a las nueva
     </div>
 </section>
 
-<!-- ===== HABILIDADES ===== -->
+<!-- HABILIDADES -->
 <section id="skills" class="hidden">
     <h2>Habilidades</h2>
 
@@ -232,7 +214,7 @@ Estoy en constante aprendizaje, buscando siempre mejorar y adaptarme a las nueva
     </div>
 </section>
 
-<!-- ===== VIDEO ===== -->
+<!-- VIDEO -->
 <section id="video" class="hidden">
     <h2>Video de presentación</h2>
 
@@ -241,7 +223,7 @@ Estoy en constante aprendizaje, buscando siempre mejorar y adaptarme a las nueva
     </video>
 </section>
 
-<!-- ===== SCRIPT ANIMACIÓN ===== -->
+<!-- ANIMACIÓN SCROLL -->
 <script>
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -250,8 +232,22 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 });
-
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
+
+<!-- PARTICULAS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 2 }
+  }
+});
 </script>
 
 </body>
