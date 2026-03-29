@@ -3,120 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portafolio Profesional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* GENERAL */
+/* ===== GENERAL ===== */
 body{
-margin:0;
-font-family: 'Segoe UI', sans-serif;
-background:#0f172a;
-color:white;
-scroll-behavior:smooth;
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
+    scroll-behavior:smooth;
 }
 
-/* NAV */
+/* ===== MENÚ ===== */
 nav{
-position:fixed;
-width:100%;
-top:0;
-background:#020617;
-padding:15px;
-display:flex;
-justify-content:center;
-gap:30px;
-z-index:1000;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    padding:15px;
+    text-align:center;
+    z-index:1000;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
 }
 
 nav a:hover{
-color:#38bdf8;
+    color:#38bdf8;
 }
 
-/* HEADER */
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+/* ===== SECCIONES ===== */
+section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+/* ===== INICIO ===== */
+#inicio h1{
+    font-size:3rem;
 }
 
 .perfil{
-width:160px;
-height:160px;
-border-radius:50%;
-border:4px solid #38bdf8;
-box-shadow:0 0 20px #38bdf8;
-object-fit:cover;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #38bdf8;
+    margin-top:20px;
+    transition:0.4s;
 }
 
-/* BOTÓN */
-.btn{
-margin-top:20px;
-padding:12px 25px;
-background:#38bdf8;
-border-radius:8px;
-color:black;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+.perfil:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #38bdf8;
 }
 
-.btn:hover{
-background:#0ea5e9;
+/* ===== SOBRE MI ===== */
+#sobre p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.7;
 }
 
-/* SECCIONES */
-section{
-padding:80px 20px;
-text-align:center;
-max-width:900px;
-margin:auto;
-}
-
-/* PROYECTOS */
+/* ===== PROYECTOS ===== */
 .proyectos{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:12px;
-width:250px;
-transition:0.3s;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    width:260px;
+    border-radius:15px;
+    transition:0.4s;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #38bdf8;
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 25px #38bdf8;
 }
 
-/* VIDEO */
+.card a{
+    display:inline-block;
+    margin-top:10px;
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+/* ===== HABILIDADES ===== */
+.skills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skill{
+    background:#38bdf8;
+    color:black;
+    padding:10px 20px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* ===== VIDEO ===== */
 video{
-width:90%;
-max-width:500px;
-border-radius:10px;
-margin-top:20px;
+    width:70%;
+    border-radius:15px;
+    box-shadow:0 0 30px rgba(0,0,0,0.7);
 }
 
-/* RESPONSIVE */
-@media(max-width:600px){
-.proyectos{
-flex-direction:column;
-align-items:center;
+/* ===== ANIMACIÓN SCROLL ===== */
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s;
 }
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .proyectos{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    video{
+        width:90%;
+    }
 }
 
 </style>
@@ -124,32 +158,28 @@ align-items:center;
 
 <body>
 
-<!-- NAV -->
+<!-- ===== MENÚ ===== -->
 <nav>
-<a href="#inicio">Inicio</a>
-<a href="#sobre">Sobre mí</a>
-<a href="#proyectos">Proyectos</a>
-<a href="#video">Video</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#video">Video</a>
 </nav>
 
-<!-- INICIO -->
-<header id="inicio">
+<!-- ===== INICIO ===== -->
+<section id="inicio" class="hidden">
+    <h1>ING. SISTEMAS COMPUTACIONALES</h1>
+    <h2>María de Jesús Martínez García</h2>
 
-<img src="tu-imagen.jpg" class="perfil">
+    <img src="tu-imagen.jpg" class="perfil">
+</section>
 
-<h1>Maria de Jesus Martinez Garcia</h1>
-<h2>ING. SISTEMAS COMPUTACIONALES</h2>
+<!-- ===== SOBRE MI ===== -->
+<section id="sobre" class="hidden">
+    <h2>Sobre mí</h2>
 
-<a href="#proyectos" class="btn">Ver proyectos</a>
-
-</header>
-
-<!-- SOBRE MI -->
-<section id="sobre">
-
-<h2>Sobre mí</h2>
-
-<p>
+    <p>
 Hola, bienvenido/a a mi página web.<br><br>
 
 Mi nombre es Maria de Jesus Martinez Garcia y soy estudiante de Ingeniería en Sistemas Computacionales. Me apasiona el mundo de la tecnología, el desarrollo de software y la resolución de problemas mediante soluciones innovadoras.<br><br>
@@ -161,44 +191,68 @@ Este espacio tiene como objetivo compartir mis proyectos, aprendizajes y experie
 Estoy en constante aprendizaje, buscando siempre mejorar y adaptarme a las nuevas tecnologías.<br><br>
 
 ¡Gracias por visitar mi página!
-</p>
-
+    </p>
 </section>
 
-<!-- PROYECTOS -->
-<section id="proyectos">
+<!-- ===== PROYECTOS ===== -->
+<section id="proyectos" class="hidden">
+    <h2>Proyectos</h2>
 
-<h2>Mis proyectos</h2>
+    <div class="proyectos">
+        <div class="card">
+            <h3>Proyecto Web</h3>
+            <p>Página de bienvenida</p>
+            <a href="#">Ver proyecto</a>
+        </div>
 
-<div class="proyectos">
+        <div class="card">
+            <h3>Base de Datos</h3>
+            <p>Gestión de información</p>
+            <a href="#">Ver proyecto</a>
+        </div>
 
-<div class="card">
-<h3>Carta Azure</h3>
-<p>Proyecto con JSON y Azure</p>
-<a href="https://calm-rock-08688791e.4.azurestaticapps.net" target="_blank">Ver</a>
-</div>
-
-<div class="card">
-<h3>Portafolio</h3>
-<p>Sitio personal</p>
-<a href="#">Ver</a>
-</div>
-
-</div>
-
+        <div class="card">
+            <h3>Aplicación</h3>
+            <p>Sistema web dinámico</p>
+            <a href="#">Ver proyecto</a>
+        </div>
+    </div>
 </section>
 
-<!-- VIDEO -->
-<section id="video">
+<!-- ===== HABILIDADES ===== -->
+<section id="skills" class="hidden">
+    <h2>Habilidades</h2>
 
-<h2>Video de presentación</h2>
-
-<video controls width="80%">
-    <source src="video.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-</video>
-
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Redes</div>
+    </div>
 </section>
+
+<!-- ===== VIDEO ===== -->
+<section id="video" class="hidden">
+    <h2>Video de presentación</h2>
+
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</section>
+
+<!-- ===== SCRIPT ANIMACIÓN ===== -->
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
